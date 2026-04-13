@@ -1,0 +1,12 @@
+1. Solicite ao usuário que informe 4 números inteiros (1 por vez) e mostre quem é o maior número.
+
+
+2. Escreva uma lista com 5 nomes pessoais. Imprima de uma forma que saia a seguinte resposta.
+Olá FULANO! Você está convidado pra um churrasco na casa de Hewerton.
+
+3. Faça o mesmo que a questão anterior, porém no lugar da lista já vir preenchida, faça com que o programa solicite 5 nomes para armazenar na lista e depois faça o convite da primeira questão com esses 5 nomes informados
+
+4. Escreva uma lista pré-definidas de senhas e nomes. 
+Ex: [['Lairson', '123'], ['Joao', 'senha']]
+Escrever um programa varrendo a lista até que o usuário digite uma senha correta.
+Ao digitar, imprima "Bem vindo(a) Nome" e encerre o programa. Se digitar errado, solicite que informe novamente.
