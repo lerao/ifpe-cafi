@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 2 - Semântica HTML5 e Mídias</title>
+    
+    <!--  CSS simples apenas para visualizar a estrutura dos blocos semânticos -->
+    <style>
+        header, nav, main, section, article, aside, footer {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        header { background-color: #f0f0f0; }
+        nav { background-color: #e0f7fa; }
+        aside { background-color: #fff9c4; width: 30%; float: right; }
+        main { width: 65%; display: inline-block; }
+        footer { clear: both; background-color: #eee; }
+    </style>
+</head>
+<body>
+
+    <!-- Indica o cabeçalho da página -->
+    <header>
+        <h1>Logotipo do Site</h1>
+        <p>Bem-vindo à nossa segunda aula sobre Semântica.</p>
+    </header>
+
+    <!-- Indica a navegação principal (menu) -->
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contatos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Indica o conteúdo principal da página -->
+    <main>
+
+        <!-- Indica uma seção temática dentro do conteúdo principal -->
+        <section>
+            <h2>Novidades da Tecnologia</h2>
+            
+            <!-- Indica um artigo independente dentro da seção -->
+            <article>
+                <h3>O que é Semântica?</h3>
+                <p>É o uso de tags que descrevem o significado do conteúdo, não apenas sua aparência.</p>
+            </article>
+
+            <article>
+                <h3>Por que usar HTML5?</h3>
+                <p>Melhora o SEO (busca no Google) e a acessibilidade para deficientes visuais.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Indica o conteúdo secundário relacionado ao principal (geralm ente barra lateral) -->
+    <aside>
+        <h3>Saiba Mais</h3>
+        <p>Acesse nossa biblioteca de links úteis sobre desenvolvimento web.</p>
+    </aside>
+
+    <!-- Indica o rodapé da página -->
+    <footer>
+        <p>&copy; 2026 - Desenvolvido na Disciplina Web - IFPE</p>
+    </footer>
+
+    <hr>
+
+    <h2>Mídias e Elementos Gráficos</h2>
+
+    <!-- Exemplo de imagem semântica com legenda usando figcaption -->
+    <figure>
+        <img src="https://portal.ifpe.edu.br/afogados/wp-content/uploads/sites/10/2026/03/PartiuIF-2026-Monitores_Site-inscricoes.png" alt="Exemplo de Imagem Semântica">
+        
+        <!-- A tag figcaption é usada para adicionar uma legenda à imagem -->
+        <figcaption>Fig. 1 - Exemplo de como usar a tag figcaption para legendar imagens.</figcaption>
+    </figure>
+
+    <h3>Vídeo e Áudio Nativos</h3>
+    
+    <!-- Elemento de vídeo -->
+    <video width="320" height="240" controls>
+
+        <!-- Fonte do vídeo -->
+        <source src="arquivos/video.mp4" type="video/mp4">
+        Seu navegador não suporta a tag de vídeo.
+    </video>
+
+    <p>Player de Áudio:</p>
+    <!-- Elemento de áudio -->
+    <audio controls>
+
+        <!-- Fonte do áudio -->
+        <source src="arquivos/audio.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <hr>
+
+    <h3>Incorporando Conteúdo Externo (Iframe)</h3>
+
+    <!-- Iframe para embed de conteúdo externo -->
+    <iframe width="560" height="315" src="https://portal.ifpe.edu.br/afogados/noticias/ifpe-divulga-resultado-preliminar-da-selecao-de-estudantes-para-partiu-if-2026/" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
+    <h3>Iframe com Vídeo do Youtube</h3>
+
+    <!-- Iframe para embed de vídeo do YouTube -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/5aY5LTkfBi0?si=85rjW21eVyngSdTr&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/c8PFBxiVO8o?si=oqK4y_wNWmm9c1qx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.2436900128987!2d-37.63472482595066!3d-7.763961377001848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a6362caff2452f%3A0x56c3139b3fcc173!2sIFPE%20Instituto%20Federal%20de%20Pernambuco%20-%20Campus%20Afogados%20da%20Ingazeira!5e0!3m2!1spt-BR!2sbr!4v1775501273082!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</body>
+</html>
