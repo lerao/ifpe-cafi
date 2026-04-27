@@ -1,0 +1,52 @@
+
+/*
+https://github.com/lerao/ifpe-cafi
+
+1. Seletor de Tag: afeta o corpo todo */
+body {
+    background-color: #f0f4f8; /* Cor de fundo leve */
+    font-family: Arial, sans-serif; /* Fonte sem serifa para melhor leitura */
+    color: #333; /* Cor do texto cinza escuro */
+    text-align: center;
+}
+
+/* 2. Seletor de Tag: estilizando o título */
+h1 {
+    color: #1bbc53; 
+    margin-top: 50px;
+}
+
+/* 3. Seletor de Classe: estilizando uma "caixa" (card) */
+.cartao {
+    background-color: white;
+    border: 2px solid #0066cc;
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 300px;
+    margin: 20px auto; /* Centraliza a div */
+    padding: 15px;
+}
+
+.cartao-soft-skills {
+    background-color: rgb(198, 118, 118);
+    border: 2px solid #db3b5b;
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 300px;
+    margin: 20px auto; /* Centraliza a div */
+    padding: 30px;
+    color: white
+}
+
+.cartao-hard-skills {
+    background-color: white;
+    border: 2px solid #9d6c22;
+    width: 350px;
+    margin: 20px auto; /* Centraliza a div */
+    padding: 30px;
+    color: #818181;
+
+}
+
+ul {
+    list-style: none; /* Remove as bolinhas da lista */
+    padding: 0;
+}
