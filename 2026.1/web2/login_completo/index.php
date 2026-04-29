@@ -8,22 +8,26 @@
 </head>
 <body>
     <div class="container">
-        <h1>Login</h1>
-        <?php
-            if (isset($_GET['msg'])) {
-                echo '<div class="alert alert-danger" role="alert">' . $_GET['msg'] . '</div>';
-            }
-        ?>
-        <form action="validalogin.php" method="post">
-        <div class="mb-3">
-            <label for="usuario" class="form-label">Usuario</label>
-            <input type="text" class="form-control" id="usuario" name="usuario">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">  
+                <h1>Login</h1>
+                <?php
+                    if (isset($_GET['msg'])) {
+                        echo '<div class="alert alert-danger" role="alert">' . $_GET['msg'] . '</div>';
+                    }
+                ?>
+                <form action="validalogin.php" method="post">
+                <div class="mb-3">
+                    <label for="usuario" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="usuario" name="usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="senha">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form> 
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="senha">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form> 
     </div>
 </body>
 </html>

@@ -15,7 +15,7 @@ include_once 'validasessao.php';
             <?php include 'menu.php'; ?>
             <div class="row">
                 <div class="col-md-6 offset-md-3">
-                    <h1><mark>Principal</mark></h1>
+                    <h1><mark>Histórico</mark></h1>
                     <h1>Bem Vindo <?php echo $_SESSION['usuario']; ?></h1>
                     
                     <p>Você está logado com sucesso!</p>
