@@ -12,13 +12,12 @@ def adicionar_elemento(lista: list, elemento: str) -> bool:
     else:
         return False
     
-
 def buscar_elemento(lista: list, elemento: str) -> bool:
     '''
     Verifica se um elemento está contido na lista.
     Se estiver, retorne verdadeiro, caso contrário, retorne falso.
     '''
-    pass
+    return elemento in lista
 
 def remover_elemento(lista: list, elemento: str) -> bool:
     '''
@@ -26,40 +25,42 @@ def remover_elemento(lista: list, elemento: str) -> bool:
     Se ele estiver contido na lista, remover o elemento e
     retornar verdadeiro, caso contrário, retornar falso.
     '''
-    pass
-
+    if elemento in lista:
+        lista.remove(elemento)
+        return True 
+    else:
+        return False
 
 def limpar_lista(lista: list) -> None:
     '''
     Remove todos os elementos da lista.
     Função sem retorno.
     '''
-    pass
-
+    lista.clear()
 
 def ordenar_lista(lista: list) -> None:
     '''
     Ordena todos os elementos da lista por ordem
     alfabética. A função não possui retorno
     '''
-    pass
-
+    lista.sort()
 
 def pegar_quantidade(lista: list) -> int:
     '''
     Retorna a quantidade de elementos dentro
     da lista
     '''
-    pass
-
+    return len(lista)
 
 def converter_maiusculo(lista: list) -> list:
     '''
     Converte todos os elementos da lista para letra
     maiúscula e os retorna em uma nova lista
     '''
-    pass
-
+    listaFinal = []
+    for el in lista:
+        listaFinal.append(el.upper())
+    return listaFinal
 
 def eliminar_repetidos(lista: list) -> list:
     '''
@@ -67,5 +68,8 @@ def eliminar_repetidos(lista: list) -> list:
     Remove todos os elementos repetidos na lista
     e retorna uma lista nova (não vale utilizar o set)
     '''
-
-    pass
+    lista_nova = []
+    for el in lista:
+        if el not in lista_nova:
+            lista_nova.append(el)
+    return lista_nova
