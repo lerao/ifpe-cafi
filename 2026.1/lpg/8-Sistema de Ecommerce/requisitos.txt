@@ -1,0 +1,11 @@
+# E-commerce
+# Lista de Produtos
+# Adicionar ao carrinho e escolha a qtd
+  # Ações: 
+    Finalizar a compra
+    Continuar a escolha
+# Pagamento
+  # Produtos escolhidos | Qtd | Valor
+  # Método pagamento
+  # Entrega 
+  # Encerrar
