@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários HTML</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f6; color: #333; padding: 20px; }
+        .container-doc { max-width: 900px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin: auto; }
+        .section-header { border-left: 6px solid #198754; padding-left: 15px; margin: 40px 0 20px; color: #0d6efd; font-weight: bold; }
+        .comparison-card { background: #fff; border-radius: 8px; padding: 25px; margin-bottom: 30px; border: 1px solid #dee2e6; }
+        .note-box { background-color: #e7f3ff; border-radius: 6px; padding: 25px; border-left: 6px solid #0d6efd; margin-top: 30px; }
+        code { background-color: #f8f9fa; padding: 2px 4px; border-radius: 4px; color: #d63384; font-size: 0.9em; }
+        legend { font-weight: bold; color: #495057; font-size: 1.1em; }
+        .old-school { font-family: 'Times New Roman', Times, serif; background-color: #fdfdfd; border: 1px solid #ccc; }
+        .instruction-text { font-size: 1rem; color: #555; line-height: 1.6; }
+        footer { border-top: 1px solid #eee; margin-top: 50px; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container-doc">
+    <header class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-dark">Formulários HTML</h1>
+    </header>
+
+    <section>
+        <h2 class="section-header">1. Formulário Padrão HTML 4 (Legado)</h2>
+        <div class="comparison-card old-school shadow-sm">
+            <form action="#" method="post">
+                <fieldset style="border: 2px solid #888; padding: 20px;">
+                    <legend>Ficha Mod. 1999</legend>
+                    <p><label for="nome">Nome (text):</label><br><input type="text" id="nome" name="nome" size="40"></p>
+                    <p>Sexo (radio):<br><input type="radio" id="m" name="sexo" value="m"> <label for="m">M</label> <input type="radio" id="f" name="sexo" value="f"> <label for="f">F</label></p>
+                    
+                    <p>
+                        <label for="cidade_old">Cidade (select):</label><br>
+                        <select id="cidade_old" name="cidade_old">
+                            <option value="afogados">Afogados da Ingazeira</option>
+                            <option value="recife">Recife</option>
+                        </select>
+                    </p>
+                    
+                    <p><label for="obs">Obs (textarea):</label><br><textarea id="obs" name="obs" rows="4" cols="40"></textarea></p>
+                    <input type="reset" value="Limpar"> <input type="submit" value="Enviar Dados">
+                </fieldset>
+            </form>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-header">2. Formulário Moderno HTML5 (Bootstrap 5)</h2>
+        <div class="comparison-card shadow border-0" style="background-color: #fcfcfc;">
+            <form action="#" method="post" class="row g-4">
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">E-mail (type="email")</label>
+                    <input type="email" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Telefone (type="tel")</label>
+                    <input type="tel" class="form-control">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Cidade (select clássico)</label>
+                    <select class="form-select" name="cidade">
+                        <option selected disabled value="">Escolha a cidade...</option>
+                        <option value="afogados">Afogados da Ingazeira</option>
+                        <option value="recife">Recife</option>
+                        <option value="caruaru">Caruaru</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Estado (datalist - Autocomplete)</label>
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Digite para pesquisar...">
+                    <datalist id="datalistOptions">
+                        <option value="Pernambuco">
+                        <option value="Paraíba">
+                        <option value="Alagoas">
+                        <option value="Ceará">
+                    </datalist>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">Data (type="date")</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">Cor (type="color")</label>
+                    <input type="color" class="form-control form-control-color w-100" value="#198754">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">Idade (type="number")</label>
+                    <input type="number" class="form-control" min="18">
+                </div>
+                <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg w-100 shadow-sm">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="note-box shadow-sm">
+        <h4 class="mb-3 text-primary fw-bold">Informações extras:</h4>
+        <ul class="instruction-text mb-0">
+            <li><strong>Select vs Datalist:</strong> O <code>&lt;select&gt;</code> obriga o usuário a escolher um item da lista. O <code>&lt;datalist&gt;</code> (HTML5) funciona como um "autocomplete", permitindo digitar ou escolher.</li>
+            <li><strong>Responsividade:</strong> No Bootstrap, a classe <code>.form-select</code> garante que o dropdown tenha a mesma altura e estilo dos inputs de texto, mantendo a harmonia do layout.</li>
+        </ul>
+    </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
