@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Financiamento - Didática</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5" style="max-width: 600px;">
+        <div class="card shadow">
+            <div class="card-header bg-dark text-white text-center">
+                <h3>Simulador de Financiamento Simples</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="valorTotal" class="form-label">Valor do Bem (R$):</label>
+                        <input type="number" id="valorTotal" class="form-control" placeholder="Ex: 50000">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="entrada" class="form-label">Entrada (R$):</label>
+                        <input type="number" id="entrada" class="form-control" placeholder="Ex: 10000">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="taxaJuros" class="form-label">Taxa de Juros Mensal (%):</label>
+                        <input type="number" id="taxaJuros" class="form-control" placeholder="Ex: 1.5">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="parcelas" class="form-label">Número de Parcelas:</label>
+                        <input type="number" id="parcelas" class="form-control" placeholder="Ex: 12">
+                    </div>
+                </div>
+                <button id="btnSimular" class="btn btn-dark w-100">Simular Financiamento</button>
+            </div>
+        </div>
+
+        <div id="resultado" class="mt-4 p-4 bg-white rounded shadow text-center d-none">
+            <!-- Resultado aparecerá aqui -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

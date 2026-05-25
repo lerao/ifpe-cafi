@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lâmpada Mágica - Didática</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .lamp-container { cursor: pointer; }
+        #lamp { max-width: 300px; transition: transform 0.2s; }
+        #lamp:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5 text-center">
+        <h1 class="mb-4">Interação com a Lâmpada</h1>
+        
+        <div class="mb-4 lamp-container">
+            <img src="img/desligada.jpg" alt="Lâmpada" id="lamp" class="img-fluid rounded shadow">
+        </div>
+
+        <div class="d-flex justify-content-center gap-3 mb-4">
+            <button id="btnLigar" class="btn btn-warning btn-lg px-5">Ligar</button>
+            <button id="btnDesligar" class="btn btn-secondary btn-lg px-5">Desligar</button>
+        </div>
+
+        <div class="alert alert-warning d-inline-block">
+            <strong>Dica:</strong> Passe o mouse sobre a lâmpada para ligar, tire para desligar. <br>
+            <strong>Cuidado:</strong> Clique duas vezes (Double Click) para ver o que acontece!
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
