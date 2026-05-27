@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Filmes - API Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>CineExplorer</h1>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Digite o nome de um filme...">
+            <button id="search-button">Buscar</button>
+        </div>
+    </header>
+
+    <main>
+        <p id="loading" class="hidden">Carregando...</p>
+        <div id="movies-container">
+            <!-- Os cards de filmes serão injetados aqui pelo JavaScript -->
+        </div>
+    </main>
+
+    <!-- Modal para a sinopse (Diferencial) -->
+    <dialog id="movie-modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Título do Filme</h2>
+            <p id="modal-description">Sinopse do filme...</p>
+            <button id="close-modal">Fechar</button>
+        </div>
+    </dialog>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

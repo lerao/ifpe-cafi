@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Teste de localStorage
+
+    <script>
+        
+        //documentação: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+
+        //Guardar um dado
+        localStorage.setItem('nome', 'João');
+
+        //Recuperar um dado
+        const nome = localStorage.getItem('nome');
+        console.log(nome); // Output: João
+
+        //Remover um dado
+        localStorage.removeItem('nome');
+
+        //Tentar recuperar o dado removido
+        const nomeRemovido = localStorage.getItem('nome');  
+        console.log(nomeRemovido); // Output: null
+
+        //Limpar todos os dados
+        localStorage.clear();
+
+        //Dica: Para salvar objetos ou listas (Arrays), 
+        // você precisa primeiro transformá-los em string 
+        // usando JSON.stringify(), e depois convertê-los de 
+        // volta ao ler usando JSON.parse().
+
+        //Exemplo:
+        // Salvar um objeto
+        const pessoa = { nome: 'Maria', idade: 30 };
+        localStorage.setItem('pessoa', JSON.stringify(pessoa));
+
+        // Recuperar o objeto
+        const pessoaRecuperada = JSON.parse(localStorage.getItem('pessoa'));
+        console.log(pessoaRecuperada); // Output: { nome: 'Maria', idade: 30 }
+
+    </script>
+</body>
+</html>

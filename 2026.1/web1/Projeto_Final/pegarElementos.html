@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="meuElemento">Este é o meu elemento</div>
+    
+    <p>Parágrafo 1</p>
+    <p>Parágrafo 2</p>
+    <p>Parágrafo 3</p>
+
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div> 
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+    
+    <script>
+        //Teste de:
+        // - document.querySelectorAll()
+        // - document.getElementsByClassName()
+        // - document.getElementsByTagName()
+        // - document.getElementById()
+
+        //documentação: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll 
+
+        //Selecionar todos os elementos com a classe "item"
+        const itens = document.querySelectorAll('.item');
+        console.log(itens);
+
+        //Selecionar o elemento com o ID "meuElemento"
+        const meuElemento = document.getElementById('meuElemento');
+        console.log(meuElemento);
+
+        //Selecionar todos os elementos com a tag "p"
+        const paragrafos = document.getElementsByTagName('p');  
+        console.log(paragrafos);
+
+        //Selecionar todos os elementos com a classe "item" usando getElementsByClassName
+        const itensPorClasse = document.getElementsByClassName('item');
+        console.log(itensPorClasse);
+
+    </script>   
+
+
+    
+</body>
+</html>

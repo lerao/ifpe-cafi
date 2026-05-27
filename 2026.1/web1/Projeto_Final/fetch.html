@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Teste de :
+        // - fetch()
+        // documentação: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/
+
+        // Exemplo de uso do fetch para obter dados de uma API pública.
+        // O fetch retorna uma Promise que resolve com um objeto Response.
+        // response.json() também retorna uma Promise que resolve com o JSON convertido.
+        fetch('https://jsonplaceholder.typicode.com/posts/1')
+            .then(response => {
+                // Verifica se a requisição foi bem-sucedida (status HTTP 200-299)
+                if (!response.ok) {
+                    throw new Error(`Erro HTTP: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // 'data' contém o objeto JavaScript obtido da API.
+                console.log('Dados recebidos da API:', data);
+            })
+            .catch(error => {
+                // O catch captura erros de rede e erros lançados manualmente.
+                console.error('Erro ao buscar os dados:', error);
+            });
+        
+        // Exemplo de uso do fetch para enviar dados para uma API.
+        // Neste caso, a API recebe um objeto em formato JSON.
+        const novoPost = {
+            title: 'Meu novo post',
+            body: 'Este é o conteúdo do meu novo post.',
+            userId: 1
+        };
+
+        // JSON.stringify converte o objeto JavaScript em uma string JSON.
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST', // Método HTTP usado para criar um novo recurso.
+            headers: {
+                'Content-Type': 'application/json' // Diz à API que o corpo está em JSON.
+            },
+            body: JSON.stringify(novoPost)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro HTTP: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // A API de teste retorna o recurso criado, incluindo um id gerado.
+            console.log('Novo post criado:', data);
+        })
+        .catch(error => {
+            console.error('Erro ao criar o post:', error);
+        });
+
+        // Observações adicionais:
+        // - fetch() é assíncrono e não bloqueia a página.
+        // - `.then()` encadeado permite processar a resposta passo a passo.
+        // - `.catch()` trata erros de rede e conversão.
+        // - Para uma sintaxe mais moderna, também é possível usar async/await.
+    </script>
+</body>
+</html>

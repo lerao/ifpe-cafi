@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="meuElemento">Este é o meu elemento Raiz</div>
+    
+    <script>
+        //Teste de:
+        // - document.createElement()
+
+        //documentação: https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+
+        //Criar um novo elemento <div>
+        const novaDiv = document.createElement('div');
+
+        //Adicionar conteúdo à nova div
+        novaDiv.textContent = 'Esta é uma nova div criada com createElement.';
+
+        //Adicionar a nova div ao corpo do documento
+        document.body.appendChild(novaDiv);
+
+
+        //Criar um novo botão
+        const botao = document.createElement('button');
+        botao.textContent = 'Clique aqui';
+
+        //Adicionar o botão ao corpo do documento
+        document.body.appendChild(botao);  
+
+        //Adicionar um evento de clique ao botão
+        botao.addEventListener('click', function() {
+            alert('Botão clicado!');
+        });
+    </script>
+</body>
+</html>

@@ -12,6 +12,8 @@ const divResultado = document.getElementById('resultado');
 // 2. Criamos a função que faz o cálculo
 function calcularMedia() {
     // Pegamos os valores dos inputs e convertemos para número
+    console.log(inputNota1.value);
+    console.log(inputNota2.value);
     const nota1 = Number(inputNota1.value);
     const nota2 = Number(inputNota2.value);
 

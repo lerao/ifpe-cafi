@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //Testes de:
+        // - Map.prototype.forEach()
+        // - Map.prototype.set()
+        // - Map.prototype.get()
+        // - Map.prototype.has()
+        // - Map.prototype.delete()
+        // - Map.prototype.clear()
+        // - Map.prototype.size
+        //documentação: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+        //Criar um novo Map
+        const meuMapa = new Map();
+
+        //Adicionar pares chave-valor ao Map    
+        meuMapa.set('nome', 'João');
+        meuMapa.set('idade', 30);
+
+        //Recuperar um valor usando a chave
+        const nome = meuMapa.get('nome');   
+        console.log(nome); // Output: João
+
+        //Verificar se uma chave existe no Map
+        const temIdade = meuMapa.has('idade');
+        console.log(temIdade); // Output: true
+
+        //Remover um par chave-valor do Map
+        meuMapa.delete('idade');
+
+        //Limpar o Map
+        meuMapa.clear();
+
+        //Criar um Map com um array de pares chave-valor
+        const outroMapa = new Map([
+            ['cor', 'azul'],
+            ['tamanho', 'grande']
+        ]);
+
+        //Iterar sobre os pares chave-valor do Map usando forEach
+        outroMapa.forEach((valor, chave) => {
+            console.log(`${chave}: ${valor}`);
+        });
+
+        //Obter o tamanho do Map
+        const tamanho = outroMapa.size;
+        console.log(tamanho); // Output: 2
+    
+    </script>
+
+</body>
+</html>

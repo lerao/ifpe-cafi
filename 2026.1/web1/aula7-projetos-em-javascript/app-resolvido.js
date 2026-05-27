@@ -1,7 +1,5 @@
 // Este arquivo começará vazio para o estudante.
 // O código será preenchido seguindo o GUIA_PASSO_A_PASSO.md
-// Este arquivo começará vazio para o estudante.
-// O código será preenchido seguindo o GUIA_PASSO_A_PASSO.md
 
 const displayRelogio = document.getElementById('relogio');
 const inputAlarme = document.getElementById('inputAlarme');
@@ -9,6 +7,8 @@ const btnDefinir = document.getElementById('btnDefinir');
 const statusAlarme = document.getElementById('statusAlarme');
 const somAlarme = document.getElementById('somAlarme');
 let horaAlarme = null; // Guardará a hora que o usuário escolher
+let alarmeTocando = false; // Flag para controlar se o alarme já foi disparado
+
 
 function atualizarRelogio() {
     const agora = new Date();
@@ -27,6 +27,19 @@ function atualizarRelogio() {
         somAlarme.play(); // Toca o bip!
         statusAlarme.textContent = "ACORDA!!! 🔔";
         statusAlarme.className = "mt-2 small text-danger fw-bold";
+
+        const btnPararAlarme = document.createElement('button');
+        btnPararAlarme.textContent = "Parar Alarme";
+        btnPararAlarme.className = "btn btn-sm btn-secondary mt-2";
+        statusAlarme.appendChild(btnPararAlarme);
+
+        btnPararAlarme.addEventListener('click', () => {
+            somAlarme.pause();
+            somAlarme.currentTime = 0;   
+            statusAlarme.textContent = "Alarme parado.";
+            statusAlarme.className = "mt-2 small text-info";
+        });
+
     }
 }
 

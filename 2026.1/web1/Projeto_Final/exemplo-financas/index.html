@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Finanças App - IFPE</title>
+</head>
+<body>
+    <header>
+        <h1>Controle de Finanças</h1>
+    </header>
+
+    <main class="container">
+        <section class="balance-container">
+            <h4>Seu Saldo</h4>
+            <h1 id="balance" class="balance">R$ 0.00</h1>
+
+            <div class="inc-exp-container">
+                <div>
+                    <h4>Receitas</h4>
+                    <p id="money-plus" class="money plus">+ R$ 0.00</p>
+                </div>
+                <div>
+                    <h4>Despesas</h4>
+                    <p id="money-minus" class="money minus">- R$ 0.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Histórico</h3>
+            <ul id="transactions" class="transactions">
+                <!-- As transações serão inseridas aqui via JS -->
+            </ul>
+        </section>
+
+        <section>
+            <h3>Nova Transação</h3>
+            <form id="form">
+                <div class="form-control">
+                    <label for="text">Nome</label>
+                    <input type="text" id="text" placeholder="Ex: Salário, Aluguel..." required />
+                </div>
+
+                <div class="form-control">
+                    <label for="amount">Valor <br>
+                        <small>(negativo - despesa, positivo - receita)</small>
+                    </label>
+                    <input type="number" step="0.01" id="amount" placeholder="Valor da transação" required />
+                </div>
+
+                <button class="btn">Adicionar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Disciplina de Web 1 - IFPE</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

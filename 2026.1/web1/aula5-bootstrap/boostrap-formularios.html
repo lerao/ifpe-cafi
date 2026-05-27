@@ -20,7 +20,12 @@
 </head>
 <body>
 
-<div class="container-doc">
+
+    <progress class="progress mb-4" value="80" max="100">50%</progress>
+    
+    <input type="range" min="0" max="100" />
+    
+    <div class="container-doc">
     <header class="text-center mb-5">
         <h1 class="display-5 fw-bold text-dark">Formulários HTML</h1>
     </header>
@@ -87,6 +92,14 @@
                     <label class="form-label fw-bold">Data (type="date")</label>
                     <input type="date" class="form-control">
                 </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">Hora</label>
+                    <input type="time" class="form-control">
+                </div>
+
+
+
                 <div class="col-md-4">
                     <label class="form-label fw-bold">Cor (type="color")</label>
                     <input type="color" class="form-control form-control-color w-100" value="#198754">

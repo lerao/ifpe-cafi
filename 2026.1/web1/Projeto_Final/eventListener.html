@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="meuElemento">Passe o mouse aqui</div>
+    
+    <script>
+        //Teste de:
+        // - addEventListener()
+        //documentação: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+        //Adicionar um evento de clique ao documento
+        document.addEventListener('click', function() {
+            console.log('O documento foi clicado!');
+        });
+
+        //Adicionar um evento de mouseover a um elemento específico
+        const meuElemento = document.getElementById('meuElemento');
+        meuElemento.addEventListener('mouseover', function() {
+            console.log('O elemento foi sobreposto!');
+        }); 
+
+        //Alterar a cor do botão para uma cor aleatória quando ele for clicado
+        const botao = document.createElement('button');
+        botao.textContent = 'Clique para mudar a cor';
+        document.body.appendChild(botao);
+        botao.addEventListener('click', function() {
+            const corAleatoria = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            botao.style.backgroundColor = corAleatoria;
+        });
+
+
+    </script>  
+
+</body>
+</html>
