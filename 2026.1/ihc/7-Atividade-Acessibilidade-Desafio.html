@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficina 1 - Acessibilidade (Desafio)</title>
+    <style>
+        body { font-family: sans-serif; padding: 40px; background-color: #fff; color: #333; }
+        .titulo { font-size: 32px; font-weight: bold; margin-bottom: 20px; }
+        .instrucoes { color: #ccc; margin-bottom: 30px; font-style: italic; } /* Contraste ruim */
+        .form-container { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; }
+        .campo { margin-bottom: 20px; }
+        .botao-enviar { 
+            background-color: blue; 
+            color: white; 
+            padding: 12px 24px; 
+            display: inline-block; 
+            cursor: pointer; 
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        /* Erro proposital: não há :focus visível nos campos */
+        input:focus { outline: none; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+
+    <div class="titulo">Portal do Aluno - Cadastro de Matrícula</div>
+    
+    <p class="instrucoes">Complete os campos abaixo para processar sua solicitação acadêmica.</p>
+
+    <div class="form-container">
+        <div class="campo">
+            Nome Completo:<br>
+            <input type="text" id="nome"> <!-- Sem label vinculada -->
+        </div>
+
+        <div class="campo">
+            Número da Matrícula:<br>
+            <input type="text"> <!-- Sem ID e sem label -->
+        </div>
+
+        <div class="campo">
+            Curso:<br>
+            <select>
+                <option>Computação</option>
+                <option>Engenharia Civil</option>
+                <option>Agroindústria</option>
+            </select>
+        </div>
+
+        <!-- Botão feito com DIV (Inacessível via teclado/leitores) -->
+        <div class="botao-enviar" onclick="alert('Dados enviados com sucesso!')">
+            ENVIAR CADASTRO
+        </div>
+    </div>
+
+</body>
+</html>

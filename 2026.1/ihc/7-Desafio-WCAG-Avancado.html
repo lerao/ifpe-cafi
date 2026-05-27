@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio WCAG Avançado - Portal Acadêmico</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 0; color: #444; }
+        header { background: #333; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+        nav ul { list-style: none; display: flex; gap: 20px; padding: 0; }
+        nav a { color: white; text-decoration: none; } /* ERRO: Links sem contraste no hover/focus */
+        
+        .hero { background: #eee; padding: 40px 20px; text-align: center; }
+        .main-content { max-width: 1000px; margin: 20px auto; padding: 0 20px; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+        
+        .news-card { border: 1px solid #ddd; margin-bottom: 20px; border-radius: 8px; overflow: hidden; }
+        .news-content { padding: 15px; }
+        .btn-icon { background: none; border: none; cursor: pointer; font-size: 1.2rem; }
+        
+        .sidebar { background: #f9f9f9; padding: 20px; border-radius: 8px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group input { width: 100%; padding: 8px; border: 1px solid #ccc; }
+        
+        /* ERRO DE CONTRASTE GRAVE */
+        .alert-box { background: #FFEBEE; color: #FFCDD2; padding: 15px; margin-bottom: 20px; border-left: 5px solid red; }
+        
+        .footer { background: #333; color: #777; padding: 20px; text-align: center; font-size: 0.8rem; }
+        
+        /* ERRO: Escondendo o foco do teclado globalmente */
+        *:focus { outline: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="font-size: 24px; font-weight: bold;">IFPE - Portal Acadêmico</div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Cursos</a></li>
+                <li><a href="#">Editais</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <!-- ERRO: H1 ausente, usando apenas estilo visual -->
+        <div style="font-size: 36px; font-weight: bold;">Bem-vindo ao Futuro da Educação</div>
+        <p>Inscrições abertas para o semestre 2026.2</p>
+    </section>
+
+    <main class="main-content">
+        <section>
+            <h2>Últimas Notícias</h2>
+            
+            <article class="news-card">
+                <!-- ERRO: Imagem sem Alt e sem descrição -->
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&q=80" alt="" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="news-content">
+                    <h3>Novo Laboratório de IHC</h3>
+                    <p>O campus agora conta com um espaço dedicado a testes de usabilidade e tecnologias assistivas. <a href="#" style="color: blue;">Clique aqui</a> para saber mais.</p>
+                    <button class="btn-icon" onclick="alert('Favoritado')">❤</button>
+                </div>
+            </article>
+
+            <!-- ERRO: Alerta com contraste impossível de ler -->
+            <div class="alert-box">
+                AVISO: O sistema entrará em manutenção às 22h de hoje. Salve seus trabalhos.
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Newsletter</h3>
+            <p>Receba avisos por e-mail:</p>
+            
+            <!-- ERRO: Form sem labels e uso de cor como único aviso -->
+            <div class="form-group">
+                <input type="text" placeholder="Seu nome">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Seu e-mail" style="border: 2px solid red;">
+            </div>
+            <p style="font-size: 0.7rem; color: red;">* O campo em vermelho é obrigatório.</p>
+            
+            <button style="width: 100%; padding: 10px; background: #2f9e41; color: white; border: none; cursor: pointer;">
+                ASSINAR
+            </button>
+
+            <br><br>
+            <!-- ERRO: Elemento interativo que não parece botão e não tem estado -->
+            <div style="color: blue; text-decoration: underline; cursor: pointer;" onclick="document.getElementById('faq').style.display='block'">
+                [+] Dúvidas frequentes
+            </div>
+            <div id="faq" style="display: none; padding: 10px; font-size: 0.9rem;">
+                Acesse o portal com suas credenciais do SIGAA para ver o calendário completo.
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        &copy; 2026 IFPE - Todos os direitos reservados.
+        <br>
+        <a href="#" style="color: #777;">Privacidade</a> | <a href="#" style="color: #777;">Termos de Uso</a>
+    </footer>
+
+</body>
+</html>
