@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabarito WCAG Avançado - Portal Acadêmico</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #1a1a1a; line-height: 1.6; }
+        
+        /* Skip link para acessibilidade de teclado */
+        .skip-link { position: absolute; top: -40px; left: 0; background: #2f9e41; color: white; padding: 8px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+
+        header { background: #1a1a1a; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        nav ul { list-style: none; display: flex; gap: 25px; padding: 0; }
+        nav a { color: #fff; text-decoration: none; font-weight: 500; padding: 5px; border-bottom: 2px solid transparent; }
+        nav a:hover, nav a:focus { border-bottom: 2px solid #2f9e41; outline: 2px solid #2f9e41; outline-offset: 4px; }
+        
+        .hero { background: #f3f4f6; padding: 60px 20px; text-align: center; border-bottom: 1px solid #e5e7eb; }
+        h1 { font-size: 2.5rem; color: #111; margin: 0 0 10px 0; }
+        
+        .main-content { max-width: 1100px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+        
+        .news-card { border: 1px solid #e5e7eb; margin-bottom: 30px; border-radius: 12px; overflow: hidden; background: white; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .news-content { padding: 20px; }
+        .news-content h3 { margin-top: 0; color: #2f9e41; }
+        
+        .btn-icon { background: #f3f4f6; border: 1px solid #d1d5db; cursor: pointer; font-size: 1.2rem; padding: 8px; border-radius: 50%; transition: all 0.2s; }
+        .btn-icon:hover { background: #fee2e2; }
+        .btn-icon:focus { outline: 3px solid #2f9e41; }
+        
+        .sidebar { background: #f9fafb; padding: 25px; border-radius: 12px; border: 1px solid #e5e7eb; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; }
+        .form-group input { width: 100%; padding: 12px; border: 2px solid #d1d5db; border-radius: 6px; box-sizing: border-box; }
+        .form-group input:focus { border-color: #2f9e41; outline: none; box-shadow: 0 0 0 3px rgba(47, 158, 65, 0.2); }
+        
+        .alert-box { background: #fee2e2; color: #991b1b; padding: 18px; margin-bottom: 25px; border-left: 6px solid #b91c1c; border-radius: 4px; font-weight: 600; }
+        
+        .footer { background: #1a1a1a; color: #9ca3af; padding: 40px 20px; text-align: center; }
+        .footer a { color: #d1d5db; text-decoration: underline; margin: 0 10px; }
+        
+        .faq-btn { background: none; border: none; color: #2563eb; text-decoration: underline; cursor: pointer; font-size: 1rem; font-weight: bold; padding: 0; }
+        .faq-content { display: none; padding: 15px; background: white; border: 1px solid #e5e7eb; margin-top: 10px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header>
+        <div style="font-size: 24px; font-weight: bold;" aria-label="Logotipo IFPE">IFPE - Portal Acadêmico</div>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Cursos</a></li>
+                <li><a href="#">Editais</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <h1>Bem-vindo ao Futuro da Educação</h1>
+            <p>Inscrições abertas para o semestre 2026.2</p>
+        </section>
+
+        <div class="main-content">
+            <section aria-labelledby="news-heading">
+                <h2 id="news-heading">Últimas Notícias</h2>
+                
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&q=80" 
+                         alt="Notebook aberto em uma mesa de escritório com código de programação na tela" 
+                         style="width: 100%; height: 250px; object-fit: cover;">
+                    <div class="news-content">
+                        <h3>Novo Laboratório de IHC</h3>
+                        <p>O campus agora conta com um espaço dedicado a testes de usabilidade e tecnologias assistivas. 
+                           <a href="#">Saiba mais sobre o novo laboratório de IHC</a>.
+                        </p>
+                        <button class="btn-icon" aria-label="Adicionar notícia aos favoritos" onclick="alert('Favoritado')">❤</button>
+                    </div>
+                </article>
+
+                <div class="alert-box" role="alert">
+                    <span aria-hidden="true">⚠️</span> 
+                    <strong>AVISO:</strong> O sistema entrará em manutenção às 22h de hoje. Salve seus trabalhos.
+                </div>
+            </section>
+
+            <aside class="sidebar" aria-labelledby="sidebar-heading">
+                <h2 id="sidebar-heading" style="font-size: 1.5rem; margin-top: 0;">Newsletter</h2>
+                <p>Receba avisos por e-mail sobre novos editais:</p>
+                
+                <form onsubmit="event.preventDefault(); alert('Inscrito!');">
+                    <div class="form-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail <span style="color: #b91c1c;">(obrigatório)</span></label>
+                        <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+                    </div>
+                    
+                    <button type="submit" style="width: 100%; padding: 14px; background: #2f9e41; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1rem;">
+                        ASSINAR NEWSLETTER
+                    </button>
+                </form>
+
+                <br>
+                <button type="button" class="faq-btn" aria-expanded="false" aria-controls="faq-content" 
+                        onclick="const el = document.getElementById('faq-content'); const exp = el.style.display === 'block'; el.style.display = exp ? 'none' : 'block'; this.setAttribute('aria-expanded', !exp); this.innerText = exp ? '[+] Ver dúvidas frequentes' : '[-] Ocultar dúvidas frequentes';">
+                    [+] Ver dúvidas frequentes
+                </button>
+                <div id="faq-content" class="faq-content" role="region">
+                    Acesse o portal com suas credenciais do SIGAA para ver o calendário completo de matrículas e feriados.
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 IFPE - Instituto Federal de Pernambuco. Todos os direitos reservados.</p>
+        <nav aria-label="Links de rodapé">
+            <a href="#">Política de Privacidade</a> | 
+            <a href="#">Termos de Uso</a> | 
+            <a href="#">Acessibilidade</a>
+        </nav>
+    </footer>
+
+</body>
+</html>

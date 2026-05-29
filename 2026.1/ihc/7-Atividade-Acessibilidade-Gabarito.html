@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficina 1 - Acessibilidade (Gabarito)</title>
+    <style>
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            padding: 40px; 
+            background-color: #ffffff; 
+            color: #1a1a1a; 
+            line-height: 1.6;
+        }
+        h1 { font-size: 32px; color: #2f9e41; margin-bottom: 10px; }
+        .instrucoes { 
+            color: #4b5563; /* Contraste adequado (WCAG AA) */
+            margin-bottom: 30px; 
+        }
+        form { 
+            background: #f3f4f6; 
+            padding: 25px; 
+            border: 1px solid #d1d5db; 
+            max-width: 500px;
+            border-radius: 8px;
+        }
+        .campo { margin-bottom: 20px; }
+        label { 
+            display: block; 
+            font-weight: 600; 
+            margin-bottom: 8px; 
+            color: #374151;
+        }
+        input, select { 
+            width: 100%; 
+            padding: 10px; 
+            border: 2px solid #9ca3af; 
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        /* Foco visível para navegação por teclado */
+        input:focus, select:focus, button:focus { 
+            outline: 3px solid #2f9e41; 
+            outline-offset: 2px;
+            border-color: #2f9e41;
+        }
+        button { 
+            background-color: #2f9e41; 
+            color: white; 
+            padding: 14px 28px; 
+            border: none;
+            cursor: pointer; 
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+        button:hover { background-color: #237a32; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Portal do Aluno - Cadastro de Matrícula</h1>
+        <p class="instrucoes">Complete os campos abaixo para processar sua solicitação acadêmica.</p>
+    </header>
+    
+    <main>
+        <form onsubmit="event.preventDefault(); alert('Dados enviados com sucesso!');">
+            <div class="campo">
+                <label for="id-nome">Nome Completo</label>
+                <input type="text" id="id-nome" name="nome" autocomplete="name" required>
+            </div>
+
+            <div class="campo">
+                <label for="id-matricula">Número da Matrícula</label>
+                <input type="text" id="id-matricula" name="matricula" required>
+            </div>
+
+            <div class="campo">
+                <label for="id-curso">Curso</label>
+                <select id="id-curso" name="curso">
+                    <option value="comp">Computação</option>
+                    <option value="civil">Engenharia Civil</option>
+                    <option value="agro">Agroindústria</option>
+                </select>
+            </div>
+
+            <button type="submit">ENVIAR CADASTRO</button>
+        </form>
+    </main>
+
+</body>
+</html>
