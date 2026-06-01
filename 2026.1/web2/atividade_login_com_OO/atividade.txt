@@ -1,0 +1,15 @@
+Vamos a atividade, pessoal!
+
+Quando estamos programando em códigos legados, gastamos muito tempo pesquisando e entendendo o que fazer e "pouco" tempo de fato realizando as alterações. Essa é a realidade de muitas empresas e pode ser a sua futuramente <3  :D kkkk
+
+Seguinte, a atividade será dividida em duas partes:
+
+(1) Buscar itens do código que merecem pesquisa (0,50 pt):
+Seu objetivo é encontrar 10 itens que você não conhece no código e que não foi ministrado em sala de aula. Para cada item, você deve escrever o que ele faz/significa (pesquise!);
+
+(2) Aplicar melhorias no comportamento/UX (0,50 pt):
+- Ajuste o código para corrigir a cor do alert para quando for saque ficar vermelho (alert-error) e quando for depósito, continuar verde;
+- Ajuste a geração de extrato para mostrar, quando for saque, o sinal de "-" na frente do valor;
+- Ajuste a geração de extrato para mostrar o texto do saque na cor vermelha para melhorar a experiência do usuário.
+
+Boa atividade!
