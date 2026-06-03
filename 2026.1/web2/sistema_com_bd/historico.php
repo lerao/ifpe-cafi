@@ -18,7 +18,34 @@ include_once 'validasessao.php';
                     <h1><mark>Histórico</mark></h1>
                     <h1>Bem Vindo <?php echo $_SESSION['usuario']; ?></h1>
                     
-                    <p>Você está logado com sucesso!</p>
+                    <p>Veja abaixo seu histórico de transações:</p>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Tipo</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            require_once 'conexao.php';
+                            $stmt = $pdo->prepare("SELECT * FROM transacoes WHERE usuario_id = ? ORDER BY data_hora DESC");
+                            $stmt->execute([$_SESSION['usuario_id']]);
+                            $transacoes = $stmt->fetchAll();
+
+                            foreach ($transacoes as $t) {
+                                $classe = ($t['tipo'] == 'Deposito') ? 'text-success' : 'text-danger';
+                                echo "<tr>";
+                                echo "<td>" . date('d/m/Y H:i', strtotime($t['data_hora'])) . "</td>";
+                                echo "<td class='$classe'>" . $t['tipo'] . "</td>";
+                                echo "<td>R$ " . number_format($t['valor'], 2, ',', '.') . "</td>";
+                                echo "</tr>";
+                            }
+                            ?>
+                        </tbody>
+                    </table>
 
                     <a href="sair.php" class="btn btn-danger">Sair</a>   
 

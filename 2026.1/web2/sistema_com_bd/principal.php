@@ -20,6 +20,24 @@ include_once 'validasessao.php';
                     
                     <p>Você está logado com sucesso!</p>
 
+                    <hr>
+                    <h3>Realizar Transação</h3>
+                    <form action="processa_transacao.php" method="post">
+                        <div class="mb-3">
+                            <label for="tipo" class="form-label">Tipo</label>
+                            <select name="tipo" id="tipo" class="form-select">
+                                <option value="Deposito">Depósito</option>
+                                <option value="Saque">Saque</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="valor" class="form-label">Valor</label>
+                            <input type="number" step="0.01" class="form-control" id="valor" name="valor" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Confirmar</button>
+                    </form>
+                    <hr>
+
                     <a href="sair.php" class="btn btn-danger">Sair</a>   
 
                     <?php
