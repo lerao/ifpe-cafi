@@ -1,9 +1,6 @@
 <?php
-session_start();
+require_once 'conexao.php';
+require_once 'classes.php';
 
-if (!isset($_SESSION['logado'])) {
-    header('Location: index.php?msg=Faça login para acessar a página principal.');
-    die();
-}
-
-?>
+$auth = new Auth($pdo);
+$auth->requireLogin();

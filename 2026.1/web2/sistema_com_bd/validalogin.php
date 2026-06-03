@@ -1,23 +1,16 @@
 <?php
-session_start();
 require_once 'conexao.php';
+require_once 'classes.php';
 
-$usuario_input = $_POST['usuario'];
-$senha_input = $_POST['senha'];
+$auth = new Auth($pdo);
 
-// Consulta preparada para evitar SQL Injection
-$stmt = $pdo->prepare("SELECT * FROM usuarios WHERE usuario = ?");
-$stmt->execute([$usuario_input]);
-$user = $stmt->fetch();
+$usuario_input = $_POST['usuario'] ?? '';
+$senha_input = $_POST['senha'] ?? '';
 
-if ($user && $senha_input == $user['senha']) {
-    $_SESSION['usuario_id'] = $user['id'];
-    $_SESSION['usuario'] = $user['nome'];
-    $_SESSION['logado'] = true;
+if ($auth->login($usuario_input, $senha_input)) {
     header('Location: principal.php');
-    die();
+    exit();
 } else {
     header('Location: index.php?msg=Login ou senha incorretos.');
-    die();
+    exit();
 }
-?>
